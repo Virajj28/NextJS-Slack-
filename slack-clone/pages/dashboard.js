@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Cards from "./components/Cards";
+import Sidebar from "./components/Sidebar";
 import {useRef,useEffect} from "react";
 import * as D3 from "d3";
 
@@ -50,20 +51,23 @@ export default function dashboard(){
     },[]);
 
     return (
-        <div>
+    <> <Sidebar/>
+        <div class="grid justify-between ml-48 pl-3">
             {/* Sidebar */}
+            
 
             {/* Navbar */}
             <div class="bg-gray-200 font-sm"><Navbar /></div>
             
             {/* Line Chart Graph */}
-            <div class="bg-purple-200">
+            <div class="bg-gray-100 border-2 rounded shadow-lg ">
                 <div class="font-bold text-center m-2">Testing in D3.js</div>
-                <svg ref={myRef} width="400" height="400"></svg>
+                <svg ref={myRef} width="400" height="250"></svg>
             </div>
 
             {/* Cards */}
             <Cards/>
         </div>
+        </>
     );
 };
